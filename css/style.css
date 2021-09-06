@@ -1,0 +1,52 @@
+/*variables for reuse*/
+
+/*resets page values*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*base styles for the page*/
+html, body {
+    background-color: #222;
+    color: white;
+    overflow-x: hidden;
+}
+
+/*fontawesome*/
+
+/*fonts*/
+
+/*mobile base*/
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.landingText {
+    display: inline-block;
+    grid-column: 2/4;
+    margin-left: -35px;
+    margin-top: 170px;
+}
+
+.landingText h1{
+    display: inline-block;
+    font-size: 60px;
+}
+
+
+.landingText input {
+    
+    width: 471px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-left: -120px;
+    height: 56px;
+    
+}
+
+
+
+/*different screen sizes below this point - do later*/
