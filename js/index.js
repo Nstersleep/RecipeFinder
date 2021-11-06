@@ -11,7 +11,7 @@ searchForm.addEventListener("submit", (e) => {
   });
   
   async function fetchAPI() {
-    const baseURL = `https://api.edamam.com/search?q=${searchQuery}&app_id=${APP_ID}&app_key=${APP_KEY}`;
+    const baseURL = `https://api.edamam.com/search?q=${searchQuery}&app_id=${APP_ID}&app_key=${APP_KEY}&to=100`;
     const response = await fetch(baseURL);
     const data = await response.json();
     generateHTML(data.hits);
@@ -31,13 +31,15 @@ searchForm.addEventListener("submit", (e) => {
               result.recipe.url
             }">View Recipe</a>
           </div>
-          <p class="item-data">Calories: ${result.recipe.calories.toFixed(2)}</p>
+          <p class="item-data">Calories: ${result.recipe.calories.toFixed(0)}</p>
           <p class="item-data">Diet label: ${
             result.recipe.dietLabels.length > 0
               ? result.recipe.dietLabels
               : "No Data Found"
           }</p>
-          <p class="item-data">Health labels: ${result.recipe.healthLabels}</p>
+          <p class="item-data">Meal type: ${result.recipe.mealType}</p>
+          <p class="item-data">Dish type: ${result.recipe.dishType}</p>
+          <p class="item-data">Cuisine: ${result.recipe.cuisineType}</p>
         </div>
       `;
     });
