@@ -3,8 +3,7 @@ const searchResultDiv = document.querySelector('.search-result');
 const container = document.querySelector('.container');
 let searchQuery = '';
 const APP_ID = 'e4ae3c1d';
-const APP_KEY = '6275dee8f23d42ed421f9f810d09a10d';
-
+const APP_KEY = '6275dee8f23d42ed421f9f810d09a10d';https://api.edamam.com/search
 searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
     searchQuery = e.target.querySelector("input").value;
@@ -12,7 +11,7 @@ searchForm.addEventListener("submit", (e) => {
   });
   
   async function fetchAPI() {
-    const baseURL = `https://api.edamam.com/search?q=${searchQuery}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=10`;
+    const baseURL = `https://api.edamam.com/search?q=${searchQuery}&app_id=${APP_ID}&app_key=${APP_KEY}`;
     const response = await fetch(baseURL);
     const data = await response.json();
     generateHTML(data.hits);
@@ -28,7 +27,7 @@ searchForm.addEventListener("submit", (e) => {
           <img src="${result.recipe.image}" alt="img">
           <div class="flex-container">
             <h1 class="title">${result.recipe.label}</h1>
-            <a class="view-btn" target="_blank" href="${
+            <a class="view-button" target="_blank" href="${
               result.recipe.url
             }">View Recipe</a>
           </div>
@@ -44,3 +43,4 @@ searchForm.addEventListener("submit", (e) => {
     });
     searchResultDiv.innerHTML = generatedHTML;
   }
+  
